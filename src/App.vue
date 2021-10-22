@@ -1,32 +1,24 @@
 <template>
   <v-app>
-    <v-main>
+    <nav>
       <Header/>
-      <CategoryOptions/>
-      <CategorySearch/>
-      <Empty/>
+    </nav>
+    <router-view></router-view>
+    <footer>
       <Footer/>
-    </v-main>
+    </footer>
   </v-app>
 </template>
+ 
 
 <script>
-import Header from './components/Header.vue'
-import CategoryOptions from './components/CategoryOptions.vue'
-import CategorySearch from './components/CategorySearch.vue'
-import Empty from './components/Empty.vue'
-import Footer from './components/Footer.vue'
-
+import Header from './components/shared/Header.vue';
+import Footer from './components/shared/Footer.vue';
 
 export default {
-  name: 'App',
-
   components: {
     Header,
     Footer,
-    CategoryOptions,
-    Empty,
-    CategorySearch
   },
 
   data: () => ({
