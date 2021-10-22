@@ -2,7 +2,7 @@
   <v-container>
     <v-row>
       <v-col>
-        <form>
+        <form ref="form">
           <v-text-field
             v-model="product.name"
             label="Nome do produto"
@@ -14,6 +14,10 @@
           <v-text-field
             v-model="product.price"
             label="Valor (R$)"
+          ></v-text-field>
+          <v-text-field
+            v-model="product.image"
+            label="URL da imagem"
           ></v-text-field>
           <v-select
             v-model="product.category"
@@ -35,11 +39,6 @@
 
           <v-btn color="primary" @click="registerProduct()"> Cadastrar </v-btn>
         </form>
-        {{ product.name }}<br />
-        {{ product.count_serves }}<br />
-        {{ product.category }}<br />
-        {{ product.price }}<br />
-        {{ product.description }}<br />
       </v-col>
     </v-row>
   </v-container>
@@ -63,7 +62,7 @@ export default {
           name: "",
           label: "",
         },
-        image:'',
+        image:"",
         is_available: true,
         is_on_sale: false,
         price: "",
@@ -106,8 +105,14 @@ export default {
     };
   },
   methods: {
+    reset () {
+        this.$refs.form.reset()
+      },
+
     registerProduct() {
       axios.post("http://localhost:3000/products", this.product);
+      alert('Produto dacastrado com sucesso');
+      this.reset();
     },
   },
 };

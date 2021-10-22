@@ -1,0 +1,5 @@
+[x] cadastrar
+[] Listar
+[] Filtrar
+[] Excluir
+[] Editar

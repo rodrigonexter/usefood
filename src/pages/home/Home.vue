@@ -3,7 +3,7 @@
     <v-main>
       <CategoryOptions/>
       <CategorySearch/>
-      <Empty/>
+      <CardProduct/>
       <RegisterNewProductButton/>
     </v-main>
   </v-app>
@@ -12,8 +12,9 @@
 <script>
   import CategoryOptions from '../../components/home/CategoryOptions.vue'
   import CategorySearch from '../../components/home/CategorySearch.vue'
-  import Empty from '../../components/shared/Empty.vue'
+  /* import Empty from '../../components/shared/Empty.vue' */
   import RegisterNewProductButton from '../../components/shared/RegisterNewProductButton.vue'
+  import CardProduct from '../../components/home/CardProduct.vue'
 
 
 
@@ -22,7 +23,8 @@ export default {
 
   components: {
     CategoryOptions,
-    Empty,
+  /*   Empty, */
+    CardProduct,
     CategorySearch,
     RegisterNewProductButton
   },
